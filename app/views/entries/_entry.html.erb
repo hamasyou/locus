@@ -7,8 +7,10 @@
 <dd>
   <%= simple_format auto_link(entry.content) %>
 </dd>
-<dd class="operation">
+<% if logged_in? %>
+  <% content_tag :dd, :class => "operation" do %>
   <%= link_to "編集", edit_entry_path(entry) %>
   <%= link_to "削除", entry, :confirm => "本当によろしいですか？", :method => :delete %>
-</dd>
+  <% end %>
+<% end %>
 <hr />
