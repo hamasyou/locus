@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :session
 
-  map.resources :entries
+  map.resources :entries, :has_many => [:comments, :trackbacks]
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -8,6 +8,9 @@
   <%= image_tag url_for_file_column(entry, :image) if entry.image %>
   <%= simple_format auto_link(entry.content) %>
 </dd>
+<dd>
+  <%= link_to "Comments (#{entry.comments_count})", entry_path(entry) + '#comments' %>
+</dd>
 <% if logged_in? %>
   <% content_tag :dd, :class => "operation" do %>
   <%= link_to "編集", edit_entry_path(entry) %>
