@@ -5,6 +5,7 @@
   </span>
 </dt>
 <dd>
+  <%= image_tag url_for_file_column(entry, :image) if entry.image %>
   <%= simple_format auto_link(entry.content) %>
 </dd>
 <% if logged_in? %>
