@@ -1,6 +1,14 @@
 <dl>
   <%= render :partial => @entry %>
   
+  <dd id="trackbacks">
+    <h2>Trackbacks</h2>
+    <div class="trackback">
+      <strong>トラックバックURL：</strong>
+      <%=h formatted_entry_trackbacks_url @entry, :xml %>
+    </div>
+  </dd>
+  
   <dd id="comments">
     <h2>Comments</h2>
     <% @entry.comments.each do |comment| %>

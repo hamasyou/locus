@@ -1,0 +1,28 @@
+<p>
+  <b>Title:</b>
+  <%=h @trackback.title %>
+</p>
+
+<p>
+  <b>Excerpt:</b>
+  <%=h @trackback.excerpt %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @trackback.url %>
+</p>
+
+<p>
+  <b>Blog name:</b>
+  <%=h @trackback.blog_name %>
+</p>
+
+<p>
+  <b>Entry:</b>
+  <%=h @trackback.entry %>
+</p>
+
+
+<%= link_to 'Edit', edit_trackback_path(@trackback) %> |
+<%= link_to 'Back', trackbacks_path %>

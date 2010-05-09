@@ -1,0 +1,28 @@
+<h1>Listing trackbacks</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Excerpt</th>
+    <th>Url</th>
+    <th>Blog name</th>
+    <th>Entry</th>
+  </tr>
+
+<% @trackbacks.each do |trackback| %>
+  <tr>
+    <td><%=h trackback.title %></td>
+    <td><%=h trackback.excerpt %></td>
+    <td><%=h trackback.url %></td>
+    <td><%=h trackback.blog_name %></td>
+    <td><%=h trackback.entry %></td>
+    <td><%= link_to 'Show', trackback %></td>
+    <td><%= link_to 'Edit', edit_trackback_path(trackback) %></td>
+    <td><%= link_to 'Destroy', trackback, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New trackback', new_trackback_path %>

@@ -10,6 +10,7 @@
 </dd>
 <dd>
   <%= link_to "Comments (#{entry.comments_count})", entry_path(entry) + '#comments' %>
+  <%= link_to "Trackbacks (#{entry.trackbacks.count})", entry_path(entry) + '#trackbacks' %>
 </dd>
 <% if logged_in? %>
   <% content_tag :dd, :class => "operation" do %>
