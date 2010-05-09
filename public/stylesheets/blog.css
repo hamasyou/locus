@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+/* =body
+------------------------------------------------------------ */
+body {
+  background: #3A3A3A url(/images/blog_bg.gif) repeat-y center;
+}
+
+/* =head
+------------------------------------------------------------ */
+h1 {
+  border-bottom: 1px solid #000;
+}
+
+/* =main
+------------------------------------------------------------ */
+#content {
+  margin: 0;
+  padding: 10px 30px 30px 30px;
+  width: 458px;
+  float: left;
+}
+
+#content dl {
+  margin: 0;
+  padding: 0;
+}
+#content dt {
+  margin: 10px 0 12px;
+  padding: 0 0 0 16px;
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent url(/images/star_m.gif) 
+              no-repeat center left;
+}
+#content dt .date {
+  padding: 0 0 0 5px;
+  font-size: 12px;
+  font-weight: normal;
+}
+#content dd {
+  margin: 0;
+  font-size: 11px;
+  line-height: 140%;
+}
+
+#content dd#trackbacks,
+#content dd#comments,
+#content dd#add_comment {
+  color: #333;
+  padding: 10px;
+  margin: 10px 0 0;
+}
+#content dd#trackbacks {
+  background: #eee;
+}
+#content dd#comments {
+  background: #eee;
+}
+#content dd#trackbacks div.trackback,
+#content dd#comments div.comment {
+  background: #fff;
+  color: #666;
+  padding: 5px 10px;
+  margin: 0 0 1px;
+}
+
+#content h2,
+#content h3 {
+  margin: 0 0 5px;
+  padding: 0;
+  font-family: "Arial Black";
+  text-transform: lowercase;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+}
+#content #errorExplanation h2 {
+  margin: -7px;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+}
+#content dd#add_comment {
+  background: #eee;
+}
+
+#content hr {
+  margin: 20px -30px;
+  padding: 0;
+  height: 1px;
+  border-width: 1px 0px 0px 0px;
+  border-style: solid;
+  border-color: #000;
+}
+
+
+/* =side
+------------------------------------------------------------ */
+#sidebar {
+  margin: 0;
+  padding: 20px 20px ;
+  width: 200px;
+  float: right;
+}
+#sidebar h3 {
+  margin: 0 0 5px;
+  padding: 0;
+  font-family: "Arial Black";
+  text-transform: lowercase;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+}
+#sidebar ul {
+  margin-bottom: 1.5em;
+}
+#sidebar ul li {
+  margin-left: 6em;
+  font-size: 80%;
+  list-style-image: url(/images/star_s.gif);
+}
+#sidebar ul li span.date {
+  font-size: 85%;
+}
+
+/* =tags
+------------------------------------------------------------ */
+#sidebar ul#tags {
+  margin: 0;
+  padding: 0 6px 0;
+  left: 0;
+}
+#sidebar ul#tags li {
+  list-style: none;
+  list-style-image: none;
+  display: inline;
+  margin: 0;
+  padding: 0 0;
+}
+.css1 { font-size: 60%; }
+.css2 { font-size: 80%; }
+.css3 { font-size: 100%; }
+.css4 { font-size: 120%; }
+
+
+

@@ -1,0 +1,13 @@
+<% form_for(@entry) do |f| %>
+  <p>
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content, "内容" %>
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit '送信' %>
+  </p>
+<% end %>

@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Blog</title>
+  <%= stylesheet_link_tag 'scaffold', 'blog' %>
+</head>
+<body>
+  <div id="container">
+    <ul id="navi">
+      <li id="naviBlog"><%= link_to "Blog", entries_path %></li>
+    </ul>
+    <h1><%= image_tag 'blog_header.jpg' %></h1>
+    
+    <%= content_tag(:div, flash[:notice], :id => "notice") if flash[:notice] %>
+    
+    <div id="content">
+<%= yield %>
+    </div>
+  </div>
+</body>
+</html>

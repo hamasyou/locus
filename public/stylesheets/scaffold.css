@@ -1,0 +1,238 @@
+@charset "UTF-8";
+
+/* =body
+------------------------------------------------------------ */
+body {
+  margin: 0;
+  padding: 0;
+  background: #666;
+  font-size: 16px;
+  font-family: Arial, "ヒラギノ角ゴ Pro W3", sans-serif;
+  text-align: center;
+  color: #333;
+}
+
+
+/* =misc
+------------------------------------------------------------ */
+img { border-style: none; vertical-align: bottom; }
+a   { color: #000; text-decoration: none; font-weight: bold;}
+a:hover { color: #999; }
+ul, ol {
+  margin:auto -3em 1em 0; padding:0;
+  position:relative; left:-3em; overflow:hidden;
+}
+li{ margin-top:0.25em; margin-bottom:0.25em; }
+ul ul, ul ol,
+ol ol, ol ul{ margin-left:1em; padding-left:0; }
+ul li, ol li{ margin-left:5em; }
+li li{ margin-left:1em; }
+
+
+/* =container
+------------------------------------------------------------ */
+#container {
+  margin: 0 auto;
+  padding: 0;
+  padding-left: 0px !important;
+  padding-left: 1px; /* IE bg centering bugfix */
+  width: 758px;
+  text-align: left;
+}
+#container:after {
+  content: "."; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;
+}
+#container {display: inline-table;}
+/* Hides from IE-mac \*/
+* html #container {height: 1%;}
+#container {display: block;}
+/* End hide from IE-mac */
+
+
+/* =navi
+------------------------------------------------------------ */
+#navi {
+  background-color: #000;
+  background: #000 url(/images/navi_bg.gif) repeat-x;
+  margin: 0;
+  padding: 0 23px;
+  left: 0;
+  width: 712px;
+  border-bottom: 1px solid #000;
+}
+#navi:after {
+  content: "."; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;
+}
+#navi {display: inline-table;}
+/* Hides from IE-mac \*/
+* html #navi {height: 1%;}
+#navi {display: block;}
+/* End hide from IE-mac */
+
+#navi li {
+  list-style: none;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+#navi li#naviCart {
+  float: right;
+}
+#navi li a {
+  display: block;
+  height: 24px;
+  text-indent: -9999px;
+  overflow: hidden;
+  background-color: transparent;
+  background-position: 0 0px;
+  background-repeat: no-repeat;
+}
+#navi li a:hover {
+  background-position: 0 -24px;
+}
+#naviBlog a {
+  background-image: url(/images/navi_blog.gif);
+  width: 44px;
+}
+#naviProducts a {
+  background-image: url(/images/navi_products.gif);
+  width: 71px;
+}
+#naviContact a {
+  background-image: url(/images/navi_contact.gif);
+  width: 64px;
+}
+#naviCart a {
+  background-image: url(/images/navi_cart.gif);
+  width: 104px;
+}
+
+
+/* =header
+------------------------------------------------------------ */
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+/* =admin
+------------------------------------------------------------ */
+.admin {
+  padding: 15px 0px 0px 30px;
+  width: 417px;
+}
+.operation {
+  padding-top: 10px;
+}
+.operation a,
+a.operation {
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 100%;
+  margin: 0 0 1em 0;
+  padding: 3px 5px;
+  background: #000 no-repeat 0 50%;
+  border: 1px solid #333;
+  color: #FFF;
+}
+.operation a:hover,
+a.operation:hover {
+  background-color: #666;
+  border: 1px solid #999;
+  color: #FFF;
+}
+
+#notice {
+  margin: 0;
+  padding: 10px 30px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #999;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+}
+label {
+  font-size: 12px;
+  margin: 0;
+  padding: 0 0 2px;
+  display: block;
+}
+/*#content textarea.text,
+#content input.text {
+  font-size: 12px;
+  width: 394px;
+  border: 1px solid #999;
+  padding: 2px;
+}
+*/
+
+/* =scaffold default
+------------------------------------------------------------ */
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid gray;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
