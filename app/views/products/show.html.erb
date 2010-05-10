@@ -1,0 +1,19 @@
+<div id="content">
+  <%= image_tag url_for_file_column(@product, :cover_image) if @product.cover_image %>
+  
+  <div id="item">
+    <h1><%=h @product.title %></h1>
+    
+    <%= link_to(image_tag(
+        url_for_file_column(@product, :image, 'middle')),
+        url_for_file_column(@product, :image), :class => 'thickbox', :title => @product.title) %>
+    
+    <div id="description">
+      <%= simple_format(h(@product.description)) %>
+    </div>
+    <div class="detail">
+      <p>価格：<%=h @product.price %>（税込）</p>
+      <%= link_to 'カートに入れる', '#' %>
+    </div>
+  </div>
+</div>

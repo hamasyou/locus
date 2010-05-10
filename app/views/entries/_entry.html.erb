@@ -1,7 +1,7 @@
 <dt>
   <%= link_to h(entry.title), entry_path(entry) %>
   <span class="date">
-    (<%=h entry.created_at.strftime("%Y.%m.%d") %>)
+    (<%=h entry.created_at.strftime('%Y.%m.%d') %>)
   </span>
 </dt>
 <dd>
@@ -13,13 +13,13 @@
   <%= link_to "Trackbacks (#{entry.trackbacks.count})", entry_path(entry) + '#trackbacks' %> |
   Tags:
   <% entry.tag_list.each do |tag| %>
-    <%= link_to h(tag), :action => "index", :tag => tag %>
+    <%= link_to h(tag), :action => 'index', :tag => tag %>
   <% end %>  
 </dd>
 <% if logged_in? %>
   <% content_tag :dd, :class => "operation" do %>
-  <%= link_to "編集", edit_entry_path(entry) %>
-  <%= link_to "削除", entry, :confirm => "本当によろしいですか？", :method => :delete %>
+  <%= link_to '編集', edit_entry_path(entry) %>
+  <%= link_to '削除', entry, :confirm => '本当によろしいですか？', :method => :delete %>
   <% end %>
 <% end %>
 <hr />

@@ -6,13 +6,17 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <%= auto_discovery_link_tag :atom, formatted_entries_url(:atom) %>
   <title>Blog</title>
-  <%= stylesheet_link_tag 'scaffold', 'blog' %>
+  <%= stylesheet_link_tag 'scaffold', 'blog', 'thickbox' %>
+  <%= javascript_include_tag 'prototype', 'effects', 'protothickbox', 'application' %>
 </head>
 <body>
   <div id="container">
     <ul id="navi">
       <li id="naviLogin"><%= link_to "Login", login_path %></li>
+      <li id="naviProducts"><%= link_to 'Products', root_path %></li>
       <li id="naviBlog"><%= link_to "Blog", entries_path %></li>
+      <li id="naviContact"><%= link_to 'Contact', :controller => 'contact' %></li>
+      <li id="naviCart"><%= link_to 'カートの中身を表示', '#' %></li>
     </ul>
     <h1><%= image_tag 'blog_header.jpg' %></h1>
     

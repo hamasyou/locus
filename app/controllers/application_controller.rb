@@ -3,7 +3,7 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-  init_gettext "locus"
+  init_gettext 'locus'
   
   include AuthenticatedSystem
   

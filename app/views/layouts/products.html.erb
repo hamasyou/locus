@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xml:lang="ja" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" 
+          content="text/html; charset=utf-8"/>
+    <title>Products</title>
+    <%= stylesheet_link_tag 'scaffold', 'products', 'thickbox' %>
+    <%= javascript_include_tag 'prototype', 'effects', 'protothickbox', 'application' %>
+  </head>
+  <body>
+    <div id="container">
+      <ul id="navi">
+        <li id="naviProducts"><%= link_to 'Products', 
+                                  root_path  %></li>
+        <li id="naviBlog"><%= link_to 'Blog', 
+                              entries_path  %></li>
+        <li id="naviContact"><%= link_to 'Contact', 
+                              :controller => 'contact' %></li>
+        <li id="naviCart"><%= link_to 'カートの中を表示', '#' %></li>
+      </ul>
+      
+      <%= content_tag(:div, flash[:notice],
+          :id => 'notice') if flash[:notice] %>
+      
+<%= yield %>
+      
+    </div>
+  </body>
+</html>

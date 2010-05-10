@@ -1,10 +1,10 @@
 <% form_for(@entry, :html => { :multipart => true }) do |f| %>
   <p>
-    <%= f.label :title, "タイトル" %>
+    <%= f.label :title, 'タイトル' %>
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label :content, "内容" %>
+    <%= f.label :content, '内容' %>
     <%= f.text_area :content %>
   </p>
   <p>
@@ -12,7 +12,7 @@
     <%= f.file_field :image %>
   </p>
   <p>
-    <%= f.label :tag_list, "タグ" %>
+    <%= f.label :tag_list, 'タグ' %>
     <%= f.text_field :tag_list %>
   </p>
   <p>

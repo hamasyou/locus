@@ -5,7 +5,7 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.xml
   def index
-    conditions = { :order => "entries.created_at DESC", :include => :tags }
+    conditions = { :order => 'entries.created_at DESC', :include => :tags }
     conditions.update(Entry.find_options_for_find_tagged_with(params[:tag])) if params[:tag]
     
     @entries = Entry.find(:all, conditions)
@@ -72,7 +72,7 @@ class EntriesController < ApplicationController
         format.html { redirect_to(@entry) }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => 'edit' }
         format.xml  { render :xml => @entry.errors, :status => :unprocessable_entity }
       end
     end
@@ -97,8 +97,8 @@ class EntriesController < ApplicationController
   
   def load_sidebar
     @tags = Entry.tag_counts
-    @side_entries = Entry.find(:all, :limit => 5, :order => "created_at DESC")
-    @side_comments = Comment.find(:all, :limit => 5, :order => "comments.created_at DESC", :include => :entry)
-    @side_trackbacks = Trackback.find(:all, :limit => 5, :order => "trackbacks.created_at DESC", :include => :entry)
+    @side_entries = Entry.find(:all, :limit => 5, :order => 'created_at DESC')
+    @side_comments = Comment.find(:all, :limit => 5, :order => 'comments.created_at DESC', :include => :entry)
+    @side_trackbacks = Trackback.find(:all, :limit => 5, :order => 'trackbacks.created_at DESC', :include => :entry)
   end
 end

@@ -14,8 +14,8 @@
     <% @entry.comments.each do |comment| %>
     <div class="comment">
       <%= link_to_unless(comment.url.blank?, h(comment.name), comment.url) %>
-      <%=h comment.created_at.strftime("%Y.%m.%d") %>
-      <%= link_to "削除", [@entry, comment], :confirm => "本当に削除しますか？", :method => :delete, :class => "operation" if logged_in? %><br />
+      <%=h comment.created_at.strftime('%Y.%m.%d') %>
+      <%= link_to '削除', [@entry, comment], :confirm => '本当に削除しますか？', :method => :delete, :class => 'operation' if logged_in? %><br />
       <%= simple_format h(comment.content) %>
     </div>
     <% end %>
@@ -26,28 +26,28 @@
     <%= error_messages_for :comment %>
     <% form_for([@entry, @comment ||= Comment.new]) do |f| %>
     <p>
-      <%= f.label :name, "名前" %>
+      <%= f.label :name, '名前' %>
       <%= f.text_field :name %>
     </p>
     <p>
-      <%= f.label :email, "メールアドレス（非表示）" %>
+      <%= f.label :email, 'メールアドレス（非表示）' %>
       <%= f.text_field :email %>
     </p>
     <p>
-      <%= f.label :url, "Webサイト（オプション）" %>
+      <%= f.label :url, 'Webサイト（オプション）' %>
       <%= f.text_field :url %>
     </p>
     <p>
-      <%= f.label :content, "内容" %>
+      <%= f.label :content, '内容' %>
       <%= f.text_area :content %>
     </p>
     <p>
-      <%= f.submit "送信" %>
+      <%= f.submit '送信' %>
     </p>
     <% end %>
   </dd>
 </dl>
 
 <div class="operation">
-  <%= link_to "一覧に戻る", entries_path %>
+  <%= link_to '一覧に戻る', entries_path %>
 </div>

@@ -114,10 +114,6 @@ li li{ margin-left:1em; }
   background-image: url(/images/navi_cart.gif);
   width: 104px;
 }
-#naviLogin a {
-  background-image: url(/images/navi_login.gif);
-  width: 44px;
-}
 
 
 /* =header

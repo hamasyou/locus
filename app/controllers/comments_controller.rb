@@ -51,7 +51,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to(@entry) }
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
-        format.html { render :template => "entries/show" }
+        format.html { render :template => 'entries/show' }
         format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
       end
     end
