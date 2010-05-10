@@ -1,10 +1,14 @@
 class EntriesController < ApplicationController
   before_filter :login_required, :except => [:index, :show]
+  before_filter :load_sidebar
   
   # GET /entries
   # GET /entries.xml
   def index
-    @entries = Entry.all
+    conditions = { :order => "entries.created_at DESC", :include => :tags }
+    conditions.update(Entry.find_options_for_find_tagged_with(params[:tag])) if params[:tag]
+    
+    @entries = Entry.find(:all, conditions)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -84,5 +88,17 @@ class EntriesController < ApplicationController
       format.html { redirect_to(entries_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  #----------------------------
+  # private
+  #----------------------------
+  private 
+  
+  def load_sidebar
+    @tags = Entry.tag_counts
+    @side_entries = Entry.find(:all, :limit => 5, :order => "created_at DESC")
+    @side_comments = Comment.find(:all, :limit => 5, :order => "comments.created_at DESC", :include => :entry)
+    @side_trackbacks = Trackback.find(:all, :limit => 5, :order => "trackbacks.created_at DESC", :include => :entry)
   end
 end

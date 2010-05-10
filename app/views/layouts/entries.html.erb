@@ -20,6 +20,46 @@
     <div id="content">
 <%= yield %>
     </div>
+    
+    <% content_tag :div, :id => "sidebar" do %>
+    <h3>Recent Entries</h3>
+    <ul id="recent-entries">
+      <% @side_entries.each do |item| %>
+      <li>
+        <%= link_to h(item.title), entry_path(item) %>
+        <span class="date">(<%=h item.created_at.strftime("%Y.%m.%d") %>)</span>
+      </li>
+      <% end %>
+    </ul>
+    
+    <h3>Recent Comments</h3>
+    <ul id="recent-comments">
+      <% @side_comments.each do |item| %>
+      <li>
+        <%= link_to h("#{item.entry.title}-#{item.name}"), entry_path(item.entry) %>
+        <span class="date">(<%=h item.created_at.strftime("%Y.%m.%d")%>)</span>
+      </li>
+      <% end %>
+    </ul>
+    
+    <h3>Recent Trackbacks</h3>
+    <ul id="recent-trackbacks">
+      <% @side_trackbacks.each do |item| %>
+      <li>
+        <%= link_to h("#{item.entry.title}-#{title.title}"), entry_path(item.entry) %>
+        <span class="date">(<%=h item.created_at.strftime("%Y.%m.%d") %>)</span>
+      </li>
+      <% end%>
+    </ul>
+    
+    <h3>Tags</h3>
+    <ul id="tags">
+      <% tag_cloud(Entry.tag_counts, %w(css1 css2 css3 css4)) do |tag, css| %>
+      <li><%= link_to h(tag.name), { :action => "index", :tag => tag.name}, :class => css %></li>
+      <% end %>
+    </ul>
+    
+    <% end if controller.controller_name == "entries" %>
   </div>
 </body>
 </html>

@@ -9,8 +9,12 @@
   <%= simple_format auto_link(entry.content) %>
 </dd>
 <dd>
-  <%= link_to "Comments (#{entry.comments_count})", entry_path(entry) + '#comments' %>
-  <%= link_to "Trackbacks (#{entry.trackbacks.count})", entry_path(entry) + '#trackbacks' %>
+  <%= link_to "Comments (#{entry.comments_count})", entry_path(entry) + '#comments' %> |
+  <%= link_to "Trackbacks (#{entry.trackbacks.count})", entry_path(entry) + '#trackbacks' %> |
+  Tags:
+  <% entry.tag_list.each do |tag| %>
+    <%= link_to h(tag), :action => "index", :tag => tag %>
+  <% end %>  
 </dd>
 <% if logged_in? %>
   <% content_tag :dd, :class => "operation" do %>

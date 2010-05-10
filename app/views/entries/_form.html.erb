@@ -12,6 +12,10 @@
     <%= f.file_field :image %>
   </p>
   <p>
+    <%= f.label :tag_list, "タグ" %>
+    <%= f.text_field :tag_list %>
+  </p>
+  <p>
     <%= f.submit '送信' %>
   </p>
 <% end %>
