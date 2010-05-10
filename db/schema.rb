@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100510032745) do
+ActiveRecord::Schema.define(:version => 20100510053357) do
 
   create_table "comments", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(:version => 20100510032745) do
     t.string   "image"
     t.integer  "comments_count",   :default => 0
     t.integer  "trackbacks_count", :default => 0
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "title"
+    t.string   "code"
+    t.string   "image"
+    t.string   "cover_image"
+    t.integer  "price"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "taggings", :force => true do |t|
